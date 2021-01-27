@@ -1,0 +1,41 @@
+1. hello vue 
+     mustache ->体验Vue响应式
+2. Vue列表展示
+     vue-for
+     后面给数组追加元素，新的元素也能在页面中渲染
+3. vue计数器小案例
+     事件监听：click->methods
+
+
+
+创建vue时，options放的东西
+     el:
+     data:
+     methods:
+     生命周期函数
+     computed
+
+
+插值语法
+     mustache语法
+     v-once
+     v-html
+     v-text
+     v-pre
+     v-cloak
+
+动态绑定 v-bind
+  绑定基本语法
+     v-bind:src
+     :href
+  动态绑定class
+     对象语法：
+     数组语法：
+  动态绑定style
+     对象语法：
+     数组语法：
+
+
+计算属性
+     1.firstname+lastname
+     2.books的totalprice

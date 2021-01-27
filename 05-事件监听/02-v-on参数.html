@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="btnClick1">button1()</button>
+        <!-- 可以省略小括号，但是有时需要参数 -->
+        <button @click="btnClick1">button1</button>
+        <!-- 如果函数需要参数却没有传入，形参为underfine -->
+        <!-- 事件定义时，写函数省略了小括号，但是方法需要参数时，Vue会默认将浏览器产生的event事件作为参数传入到方法中。 -->
+        <button @click="btnClick2('avs')">button2</button>
+
+        <!-- 方法定义时，我们需要event对象，同时需要其他参数 -->
+        <!-- event对象可以通过$event获取 -->
+        <button @click="btnClick3(123,$event)">button3</button>
+        <button>button4</button>
+    </div>
+    <script src="../vue/vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:"hello"
+            },
+            methods:{
+                btnClick1(){
+                    console.log('hhh')
+                },
+                btnClick2(event){
+                    console.log('hhh'+event)
+                },
+                btnClick3(abc,event){
+                    console.log('hhh',abc,event)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button>click me</button>
+        <button>click me</button>
+        <button>click me</button>
+        <button>click me</button>
+        <button>click me</button>
+    </div>
+    <script>
+        // 1.变量作用域：变量在什么范围是可用的。
+        {
+            var name="why";
+            console.log(name);
+        }
+        console.log(name);
+
+        // 2.没有块级作用域带来的问题: if的块级
+        var func;
+        if(true){
+            var name="why"
+            func=function(){
+                console.log(name);
+            }
+        }
+        name='tell'
+        func()
+        // 3.没有块级作用域带来的问题: for的块级
+        // 闭包可以解决这个问题：函数是一个作用域
+        var btns=document.getElementsByTagName('button');
+        for (let i=0;i<btns.length;i++){
+            btns[i].addEventListener('click',function(){
+                console.log('第'+i+'个按钮被点击')
+            })
+            //闭包解决问题
+            (function(i){
+                btns[i].addEventListener('click',function(){
+                console.log('第'+i+'个按钮被点击')
+            })
+            })(i)
+        }
+    </script>
+</body>
+</html>
